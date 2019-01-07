@@ -15,7 +15,7 @@ class Patient
     Appointment.new(doctor, date, self)
   end
 
-  def sappointments
+  def appointments
     Appointment.all.select {|appt| appt.genre == self}
   end
 
