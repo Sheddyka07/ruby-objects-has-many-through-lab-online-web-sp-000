@@ -19,7 +19,7 @@ class Doctor
     songs.map {|song| song.genre}
   end
 
-  def new_song(song, genre)
-    Song.new(name, self, genre)
+  def new_appointment(date, patient)
+    Appointment.new(date, self, patient)
   end
 end
