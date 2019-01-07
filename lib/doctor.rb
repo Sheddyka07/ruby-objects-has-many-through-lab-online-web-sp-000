@@ -15,8 +15,8 @@ class Doctor
     Appointment.all.select {|appointment| appointment.doctor == self}
   end
   
-  def genres
-    songs.map {|song| song.genre}
+  def patients
+    appointments.map {|appointment| appointment.genre}
   end
 
   def new_appointment(date, patient)
