@@ -1,5 +1,5 @@
 class Patient 
-  attr_accessor :name, :song, :artist
+  attr_accessor :name, :doctor, :date
   @@all = []
 
   def initialize(name)
@@ -11,15 +11,15 @@ class Patient
     @@all
   end
 
-  def new_song(name, artist)
-    Song.new(name, artist, self)
+  def new_appointment(doctor, date)
+    Appointment.new(doctor, date, self)
   end
 
-  def songs
-    Song.all.select {|song| song.genre == self}
+  def sappointments
+    Appointment.all.select {|appt| appt.genre == self}
   end
 
-  def artists
-    songs.collect {|song| song.artist}
+  def doctors
+    appointments.collect {|appt| appt.artist}
   end
 end
